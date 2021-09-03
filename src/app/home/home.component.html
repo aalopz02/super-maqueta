@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!--<h2 style ="float:center"> Sistema de control y monitoreo de una casa inteligente</h2>-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <div class="center">
+        <h3>Sistema de control automático de una casa inteligentse</h3>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg">
+            <div>
+                <img src="http://localhost:8080/casa_maqueta.png" class="img_fluid" style="width:800px;height:845px;">
+            </div>
+            <div>
+                <div>
+                    <div *ngIf="verificarEstado('cocina'); else elseCocina">
+                        <button (click)="setState('cocina')" _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posCocina">
+                            <span class="mat-button-wrapper">
+                                <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                    O
+                                </mat-icon>
+                            </span>
+                            <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                            </span>
+                            <span class="mat-button-focus-overlay">
+                            </span>
+                        </button>
+                    </div>
+                    <ng-template #elseCocina>
+                        <button (click)="setState('cocina')" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posCocina">
+                            <span class="mat-button-wrapper">
+                                <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                    X
+                                </mat-icon>
+                            </span>
+                            <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                            </span>
+                            <span class="mat-button-focus-overlay">
+                            </span>
+                        </button>
+                    </ng-template>
+                </div>
+
+                <div *ngIf="verificarEstado('sala'); else Sala">
+                    <button (click)="setState('sala')" _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posSala">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                O
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #Sala>
+                    <button (click)="setState('sala')" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posSala">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                X
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+            <div>
+                <div *ngIf="verificarEstado('comedor'); else Comedor">
+                    <button (click)="setState('comedor')" _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posComedor">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                O
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #Comedor>
+                    <button (click)="setState('comedor')" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posComedor">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                X
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+
+            <div>
+                <div *ngIf="verificarEstado('c1'); else Cuarto1">
+                    <button (click)="setState('c1')" _ngcontent-rlf-c133="" mat-fab="" color="warn" class="mat-focus-indicator mat-fab mat-button-base mat-primary posCuarto1">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                O
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #Cuarto1>
+                    <button (click)="setState('c1')" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posCuarto1">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                X
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay"></span>
+                    </button>
+                </ng-template>
+            </div>
+            <div>
+                <div *ngIf="verificarEstado('c2'); else Cuarto2">
+                    <button (click)="setState('c2')" _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posCuarto2">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                O
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #Cuarto2>
+                    <button (click)="setState('c2')" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posCuarto2">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                X
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+            <div>
+                <div *ngIf="verificarEstadoPuerta('pd'); else puertaPrincipal">
+                    <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posPuertaPrincipal">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                A
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #puertaPrincipal>
+                    <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posPuertaPrincipal">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                C
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+            <div>
+                <div *ngIf="verificarEstadoPuerta('pt'); else puertaTrasera">
+                    <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posPuertaTrasera">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                A
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #puertaTrasera>
+                    <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posPuertaTrasera">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                C
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+            <div>
+                <div *ngIf="verificarEstadoPuerta('pc1'); else pCuarto1">
+                    <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posPCuarto1">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                A
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #pCuarto1>
+                    <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posPCuarto1">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                C
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+            </div>
+
+            <div>
+                <div *ngIf="verificarEstadoPuerta('pc2'); else pCuarto2">
+                    <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary posPCuarto2">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                A
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </div>
+                <ng-template #pCuarto2>
+                    <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn posPCuarto2">
+                        <span class="mat-button-wrapper">
+                            <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                                C
+                            </mat-icon>
+                        </span>
+                        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round">
+                        </span>
+                        <span class="mat-button-focus-overlay">
+                        </span>
+                    </button>
+                </ng-template>
+              </div>
+
+
+        </div>
+
+        <div class="col-lg">
+            <div>
+                <img src="http://localhost:8080/pato.jpeg" style ="width:800px;height:845px">
+            </div>
+            <div>
+                <button (click)="camera()" class="btn btn-primary ripple-surface mb-5" >
+                    Tomar Foto
+                </button>
+            </div>
+            
+        </div>
+    
+      </div>
+    </div>
+  </body>
+</html>
