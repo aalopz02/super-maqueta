@@ -12,6 +12,18 @@ import { timer } from 'rxjs'
 
 export class HomeComponent implements OnInit {
   data: any;
+  cameraInit = false;
+  imageSrc = "http://localhost:8080/pato.jpeg";
+  btnText = "Tomar Foto";
+  buttonLights = [{name:'cocina',class:'posCocina'},
+                  {name:'sala',class:'posSala'},
+                  {name:'comedor',class:'posComedor'},
+                  {name:'c1',class:'posCuarto1'},
+                  {name:'c2',class:'posCuarto2'}];
+  buttonDoors = [{name:'pd',class:'posPuertaPrincipal'},
+                  {name:'pt',class:'posPuertaTrasera'},
+                  {name:'pc1',class:'posPCuarto1'},
+                  {name:'pc2',class:'posPCuarto2'}];
 
   constructor(private router: Router, private devicesServices: DevicesServices) { }
 
@@ -19,8 +31,15 @@ export class HomeComponent implements OnInit {
     this.observableTimer();
   }
 
-  camera(){
-    console.log("EL PATO!!!!!!!!!!!!")
+  toggleImg(){
+    if (this.cameraInit){
+      this.imageSrc = "http://localhost:8080/pato.jpeg";
+      this.btnText = "Tomar Foto";
+    } else {
+      this.imageSrc = "http://localhost:8080/foto.png";
+      this.btnText = "Ocultar";
+    }
+    this.cameraInit = !this.cameraInit;
   }
 
   observableTimer() {
