@@ -3,6 +3,7 @@ import { waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { DevicesServices } from '../services/devices.service';
 import { timer } from 'rxjs'
+import { CameraService } from '../services/camera.service';
 
 @Component({
   selector: 'app-home',
@@ -25,10 +26,24 @@ export class HomeComponent implements OnInit {
                   {name:'pc1',class:'posPCuarto1'},
                   {name:'pc2',class:'posPCuarto2'}];
 
-  constructor(private router: Router, private devicesServices: DevicesServices) { }
+  constructor(private router: Router, private devicesServices: DevicesServices, private cameraService : CameraService) { }
 
   ngOnInit(): void {
     this.observableTimer();
+  }
+
+  apagarTodo(){
+    this.devicesServices.setAll(0).subscribe((resp: any) => {
+      const answer = resp;
+    });
+    this.getAllDevs();
+  }
+
+  encenderTodo(){
+    this.devicesServices.setAll(1).subscribe((resp: any) => {
+      const answer = resp;
+    });
+    this.getAllDevs();
   }
 
   toggleImg(){
@@ -36,7 +51,9 @@ export class HomeComponent implements OnInit {
       this.imageSrc = "http://localhost:8080/pato.jpeg";
       this.btnText = "Tomar Foto";
     } else {
-      this.imageSrc = "http://localhost:8080/foto.png";
+      this.cameraService.get().subscribe((resp:any) => {
+        this.imageSrc="data:image/png;base64," + resp;
+      });
       this.btnText = "Ocultar";
     }
     this.cameraInit = !this.cameraInit;

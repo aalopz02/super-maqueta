@@ -12,10 +12,15 @@ import { Injectable } from '@angular/core';
     constructor(private http: HttpClient) { }
 
     getAll(){
-        return this.http.get(this.address + "home");
+      return this.http.get(this.address + "home");
     }
 
     patch(devId :string, devState : number){
-        return this.http.patch(this.address + "home/" + devId + "/" + devState.toString(), {});
+      return this.http.patch(this.address + "home/" + devId + "/" + devState.toString(), {});
     }
+
+    setAll(devState : number){
+      return this.http.patch(this.address + "allDevs/" + devState.toString(), {});
+    }
+
   }
