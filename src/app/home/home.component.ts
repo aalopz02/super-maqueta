@@ -48,15 +48,16 @@ export class HomeComponent implements OnInit {
 
   toggleImg(){
     if (this.cameraInit){
+      this.cameraInit = !this.cameraInit;
       this.imageSrc = "http://localhost:8080/pato.jpeg";
       this.btnText = "Tomar Foto";
     } else {
       this.cameraService.get().subscribe((resp:any) => {
         this.imageSrc="data:image/png;base64," + resp;
       });
-      this.btnText = "Ocultar";
+      this.btnText = "Tomar otra";
     }
-    this.cameraInit = !this.cameraInit;
+    
   }
 
   observableTimer() {
