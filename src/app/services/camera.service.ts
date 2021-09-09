@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 
   export class CameraService {
-    address = "http://localhost:5000/";
+    address = "http://192.168.1.2:5000/";
 
     constructor(private http: HttpClient) { }
 

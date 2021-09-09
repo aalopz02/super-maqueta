@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   toogleStream(){
     if (this.stream){
-      const source = timer(1000, 2000);
+      const source = timer(1000, 1020);
       const abc = source.subscribe(val => {
         this.cameraService.get().subscribe((resp:any) => {
           this.imageSrc="data:image/png;base64," + resp;
