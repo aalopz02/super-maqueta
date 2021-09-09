@@ -12,6 +12,7 @@ import { CameraService } from '../services/camera.service';
 })
 
 export class HomeComponent implements OnInit {
+  easterFlag= false;
   stream = false;
   data: any;
   streamText = "Stream";
@@ -29,6 +30,10 @@ export class HomeComponent implements OnInit {
                   {name:'pc2',class:'posPCuarto2'}];
 
   constructor(private router: Router, private devicesServices: DevicesServices, private cameraService : CameraService) { }
+  
+  easterCheck(){
+    return this.easterFlag;
+  }
 
   ngOnInit(): void {
     this.observableTimer();
@@ -70,6 +75,10 @@ export class HomeComponent implements OnInit {
       this.stream = true;
     }
     
+  }
+
+  easter(){
+    this.easterFlag = true;
   }
 
   toggleImg(){

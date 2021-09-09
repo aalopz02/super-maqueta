@@ -104,6 +104,7 @@
                                 {{streamText}}
                             </button>
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -111,6 +112,14 @@
         </div>
     
       </div>
+    </div>
+    <button (click)="easter()" class="btn btn-primary ripple-surface mb-5" >
+        X
+    </button>
+    <div *ngIf="easterCheck();">
+        <div>
+            <img src="http://localhost:8080/image.jpg" style ="width:800px;height:830px">
+        </div>
     </div>
   </body>
 </html>
