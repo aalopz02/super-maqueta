@@ -15,6 +15,10 @@ html,body{
     color: #fff;
 }
 
+.mat-warn{
+    background-color: #b53f3f;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1266f1;

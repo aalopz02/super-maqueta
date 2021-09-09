@@ -30,7 +30,7 @@
                     </button>
                 </div>
                 <ng-template #elseBlock>
-                    <button (click)="setState(leButton.name)" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn" [class]="leButton.class">
+                    <button (click)="setState(leButton.name)" _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab" [class]="leButton.class">
                         <span class="mat-button-wrapper">
                             <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
                                 X
@@ -45,7 +45,7 @@
             </div>
             <div *ngFor="let leButton of buttonDoors; let i = index">
                     <div *ngIf="verificarEstadoPuerta(leButton.name); else elseBlock">
-                        <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-primary" [class]="leButton.class">
+                        <button _ngcontent-rlf-c133="" mat-fab="" color="primary" class="mat-focus-indicator mat-fab mat-button-base mat-warn" [class]="leButton.class">
                             <span class="mat-button-wrapper">
                                 <mat-icon _ngcontent-rlf-c133="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
                                     A
@@ -58,7 +58,7 @@
                         </button>
                     </div>
                     <ng-template #elseBlock>
-                        <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab mat-warn" [class]="leButton.class">
+                        <button _ngcontent-hnv-c139="" mat-fab="" class="mat-focus-indicator mat-fab mat-button-base mat-fab" [class]="leButton.class">
                             <span class="mat-button-wrapper">
                                 <mat-icon _ngcontent-hnv-c139="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
                                     C
