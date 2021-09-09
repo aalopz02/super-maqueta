@@ -12,6 +12,7 @@ import { CameraService } from '../services/camera.service';
 })
 
 export class HomeComponent implements OnInit {
+  stream = false;
   data: any;
   cameraInit = false;
   imageSrc = "http://localhost:8080/pato.jpeg";
@@ -44,6 +45,18 @@ export class HomeComponent implements OnInit {
       const answer = resp;
     });
     this.getAllDevs();
+  }
+
+  toogleStream(){
+    if (this.stream){
+      const source = timer(1000, 2000);
+      const abc = source.subscribe(val => {
+        this.cameraService.get().subscribe((resp:any) => {
+          this.imageSrc="data:image/png;base64," + resp;
+        });
+      });
+    }
+    this.stream = !this.stream;
   }
 
   toggleImg(){
