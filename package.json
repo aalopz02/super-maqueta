@@ -18,6 +18,19 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+<<<<<<< Updated upstream
+=======
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@popperjs/core": "^2.10.0",
+    "@types/chart.js": "^2.9.34",
+    "angular-bootstrap-md": "^12.0.0",
+    "animate.css": "^3.7.2",
+    "bootstrap": "^5.1.0",
+    "chart.js": "^2.9.4",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.6.0",
+>>>>>>> Stashed changes
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
