@@ -32,12 +32,13 @@ export class LoginComponent implements OnInit {
     this.userLoginService.get(formData.userID, formData.password).subscribe((resp: any) => {
       const answer = resp;
 
-      if (answer == null){
-        console.log('Usuario no existe');
+      if (answer == -1){
         this.error = 'Usuario no existe';
         return;
+      } else if (answer == 0){
+        this.error = 'Clave mal';
+        return;
       }
-      console.log(formData.password);
       this.router.navigateByUrl('home');
     });
   }
