@@ -14,6 +14,7 @@ import { CameraService } from '../services/camera.service';
 export class HomeComponent implements OnInit {
   stream = false;
   data: any;
+  streamText = "Stream";
   cameraInit = false;
   imageSrc = "http://localhost:8080/pato.jpeg";
   btnText = "Tomar Foto";
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.observableTimer();
+    this.streamFunc();
   }
 
   apagarTodo(){
@@ -47,16 +49,27 @@ export class HomeComponent implements OnInit {
     this.getAllDevs();
   }
 
-  toogleStream(){
-    if (this.stream){
-      const source = timer(1000, 1020);
+  streamFunc(){
+      const source = timer(1000, 1100);
       const abc = source.subscribe(val => {
         this.cameraService.get().subscribe((resp:any) => {
-          this.imageSrc="data:image/png;base64," + resp;
+          if (this.stream){
+            this.imageSrc="data:image/png;base64," + resp;
+          }
         });
       });
     }
-    this.stream = !this.stream;
+
+  toogleStream(){
+    if (this.stream){
+      this.streamText = "Stream";
+      this.stream = false;
+    } else {
+      this.streamText = "Stop";
+      this.cameraInit = false;
+      this.stream = true;
+    }
+    
   }
 
   toggleImg(){

@@ -92,14 +92,21 @@
                 <img src="{{imageSrc}}" style ="width:800px;height:830px">
             </div>
             <div>
-                <button (click)="toggleImg()" class="btn btn-primary ripple-surface mb-5" >
-                    {{btnText}}
-                </button>
-            </div>
-            <div>
-                <button (click)="toogleStream()" class="btn btn-primary ripple-surface mb-5" >
-                    Stream
-                </button>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg">
+                            <button (click)="toggleImg()" class="btn btn-primary ripple-surface mb-5" >
+                                {{btnText}}
+                            </button>
+                        </div>
+                        <div class="col-lg">
+                            <button (click)="toogleStream()" class="btn btn-primary ripple-surface mb-5" >
+                                {{streamText}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     
