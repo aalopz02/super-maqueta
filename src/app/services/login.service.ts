@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   })
 
 export class LoginService {
-    address = "http://192.168.1.2:5000/login";
+    address = "http://localhost:5000/login";
 
     constructor(private http: HttpClient) { }
 
